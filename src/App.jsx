@@ -5,11 +5,11 @@ import './App.css'
 
 const App = () => {
   const [count, setCount] = useState(0)
-
-  // const arrowFuction = () => {
-  //   console.log(`Hao Tran`);
-  // }
-  // arrowFuction();
+  const MyComponent = () => {
+    return (
+      <div>Hao Tran</div>
+    );
+  }
   return (
     <>
       <div>
@@ -21,6 +21,7 @@ const App = () => {
         </a>
       </div>
       <h1>Hello Word</h1>
+      <MyComponent />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
