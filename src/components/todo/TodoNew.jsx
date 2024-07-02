@@ -1,19 +1,26 @@
+import { useState } from "react";
+
 const TodoNew = (props) => {
-    console.log(`check props: `, props);
+    const [valueInput, setValueInput] = useState("Hao Tran");
     const { addNewTodo } = props;
     // addNewTodo("Hao tran");
     const handleClick = () => {
-        alert(`Click me`)
+        console.log(`>>> Check Value Input `, valueInput);
     }
     const handleOnChange = (name) => {
-        console.log(`>> Check on Change`, name);
+
+        setValueInput(name);
     }
     return (
         <div className='todo-new'>
             <input className='todo-Input' type="text" placeholder='  Enter Your Task'
                 onChange={(event) => handleOnChange(event.target.value)} />
             <button className='btn-Add' onClick={handleClick}>Add</button>
+            <div>
+                My text input is = {valueInput}
+            </div>
         </div>
+
     )
 }
 export default TodoNew;
