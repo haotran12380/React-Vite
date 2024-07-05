@@ -1,6 +1,9 @@
 const TodoData = (props) => {
 
-    const { todoList } = props;
+    const { todoList, deleteTodo } = props;
+    const handleClick = (id) => {
+        deleteTodo(id);
+    }
     console.log(`>>> check props toDo: `, todoList);
     return (
         <div className='todo-data'>
@@ -9,7 +12,7 @@ const TodoData = (props) => {
                 return (<div>
                     <div className={`todo-item`} key={item.id}>
                         {item.name}
-                        <button>Delete</button>
+                        <button onClick={() => handleClick(item.id)} style={{ cursor: `pointer` }} >Delete</button>
                     </div>
 
                 </div>)
